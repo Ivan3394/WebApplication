@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <!--    <resource-ref>
+        <res-ref-name>jdbc/groupsdb</res-ref-name>
+        <res-type>javax.sql.DataSource</res-type>
+        <res-auth>Container</res-auth>
+    </resource-ref>-->
+    <resource-ref>
+        <description>ItProduct Datasource</description>
+        <res-ref-name>jdbc/itproduct</res-ref-name>
+        <res-type>javax.sql.DataSource</res-type>
+        <res-auth>Container</res-auth>
+        <res-sharing-scope>Shareable</res-sharing-scope>
+    </resource-ref>
+    <servlet>
+        <servlet-name>IndexServlet</servlet-name>
+        <servlet-class>Servlets.IndexServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ItProductServlet</servlet-name>
+        <servlet-class>Servlets.ItProductServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>IndexServlet</servlet-name>
+        <url-pattern>/IndexServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ItProductServlet</servlet-name>
+        <url-pattern>/ItProductServlet</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <!--        <session-timeout>
+            30
+        </session-timeout>-->
+    </session-config>
+    <resource-ref>
+        <res-ref-name>itproduct</res-ref-name>
+        <res-type>javax.sql.DataSource</res-type>
+        <res-auth>Container</res-auth>
+        <res-sharing-scope>Shareable</res-sharing-scope>
+    </resource-ref>
+</web-app>
